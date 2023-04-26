@@ -1,6 +1,10 @@
 # random_bits
 random things (wtfpl)
 
+# notes on committing python scripts
+
+always include a few newlines at the start of the file or else you cant chain the scripts.
+
 # running the python utility scripts
 |name|script|
 |----|------|
