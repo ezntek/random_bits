@@ -4,6 +4,3 @@ import subprocess
 
 def clear():
     _ = subprocess.run(["clear"])
-
-# couple of empty lines to support file chaining
-
