@@ -4,7 +4,7 @@ random things (wtfpl)
 # running the python utility scripts
 |name|script|
 |----|------|
-|basic calculator utility functions|`python -i -c "$(curl -fsSL 'https://raw.githubusercontent.com/ezntek/random_bits/main/py/calculator_functions.py')")`|
+|basic calculator utility functions|`python -i -c "$(curl -fsSL 'https://raw.githubusercontent.com/ezntek/random_bits/main/py/prelude.py') $(curl -fsSL 'https://raw.githubusercontent.com/ezntek/random_bits/main/py/calculator_functions.py')"`|
 
 ## running multiple scripts + starting a repl at once
 
