@@ -9,6 +9,9 @@ __end__ = "\033[0m"
 
 __help__ = f"""
 {__bold__}syntax:{__end__} name_of_function: args
+
+##################################
+
 {__bold__}area_square{__end__}: x
 {__bold__}area_rect{__end__}: x y
 {__bold__}area_trapezium{__end__}: top bottom height
