@@ -44,4 +44,4 @@ area_circle_pro = lambda pi, r: pi*r**2
 area_circle_pro_diameter = lambda pi, d: (d/2)**2*pi
 interior_angles_polygon = lambda polygon_sides: 180*(polygon_sides-2)
 one_interior_angle_polygon = lambda polygon_sides: interior_angles_polygon(polygon_sides)/polygon_sides
-one_exterior_angle_polygon = lambda polygon_sides: 180-one_interior_angle_polygon(polygon_sides)
+one_exterior_angle_polygon = lambda polygon_sides: 360/polygon_sides
