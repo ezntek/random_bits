@@ -1,16 +1,15 @@
-mod translate;
-
-use clap::{Parser, Subcommand};
+pub mod translate;
+pub use clap::{Parser, Subcommand};
 
 #[derive(Subcommand, Debug)]
-enum Command {
+pub enum Command {
     Encode { text: String },
     Decode { text: String }
 }
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = "None")]
-struct Cli {
+pub struct Cli {
     #[command(subcommand)]
-    action: Command
+    pub action: Command
 }
