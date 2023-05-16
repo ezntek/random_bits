@@ -1,4 +1,5 @@
 use clap::Parser;
+use colored::Colorize;
 use meow_translator::{*, translate::*};
 
 fn main() {
@@ -7,11 +8,11 @@ fn main() {
     match args.action {
         Command::Encode { text } => {
             let result = encode(&text);
-            println!("Output: {}", result) 
+            println!("{0} {1}", "Result: ".bold(), result) 
         },
         Command::Decode { text } => {
             let result = decode(&text);
-            println!("Output: {}", result)
+            println!("{0} {1}", "Result: ".bold(), result)
         },
     }
 }

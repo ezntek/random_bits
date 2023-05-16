@@ -1,4 +1,4 @@
-pub fn encode_letter(character: &char) -> Result<&'static str, &str> {
+fn encode_letter(character: &char) -> Result<&'static str, &str> {
     match character {
         ' ' => Ok("_"),
         'a' => Ok("me,meow"),
@@ -41,8 +41,8 @@ pub fn encode_letter(character: &char) -> Result<&'static str, &str> {
     }
 }
 
-pub fn decode_sequence(sequence: &str) -> Result<char, &'static str> {
-    match sequence {
+fn decode_sequence(sequence: &String) -> Result<char, &'static str> {
+    match sequence.as_str() {
         "_" => Ok(' '),
         "me,meow" => Ok('a'),
         "meow,me,me,meow" => Ok('b'),
@@ -90,7 +90,7 @@ pub fn encode(text: &String) -> String {
     let mut result = String::new();
 
     for ch in text.chars().into_iter() {
-        let translated_ch = match encode_letter(&ch) {
+        let translated_ch = match encode_letter(&ch.to_ascii_lowercase()) {
             Ok(c) => format!("{} ; ", c),
             Err(_) => String::new(),
         };
@@ -103,10 +103,12 @@ pub fn encode(text: &String) -> String {
 
 pub fn decode(text: &String) -> String {
     let mut result = String::new();
-    let sliced_text: Vec<&str> = text.split(" ; ").collect();
+    let sliced_text: Vec<String> = text.split(" ; ")
+        .map(|text| text.to_ascii_lowercase())
+        .collect();
 
     for pat in sliced_text.into_iter() {
-        let ch = match decode_sequence(pat) {
+        let ch = match decode_sequence(&pat) {
             Ok(pt) => pt,
             Err(_) => ' ',
         };
