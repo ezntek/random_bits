@@ -14,7 +14,7 @@ build:
 	ln -s target/release/meow_translator ./meow_translator
 
 add_localbin_to_path:
-	if [ ! -d "$(HOME)/.local/bin/" ]; then \
+	if [ -d "$(HOME)/.local/bin/" ]; then \
 		mkdir $(HOME)/.local/bin; \
 	fi
 	
